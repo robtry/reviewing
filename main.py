@@ -4,7 +4,7 @@
 #=> Output: Result for each word 
 #=> Author: Roberto Gervacio ~~ Mx ~~
 #=> Start Data: 21/01/2019
-#=> Last Update: 22/01/2019
+#=> Last Update: 23/01/2019
 #=> Aditional Comments: ---
 #===================================================*/
 
@@ -12,12 +12,13 @@ import random
 
 class palabra(object):
 
-	def __init__(self, spanish, english):
+	def __init__(self, spanish, english, pronunciation="?"):
 		self.spanish = spanish
 		self.english = english
 		self.spanish_c = 0
 		self.english_c = 0
 		self.completed = 0
+		self.pronunciation = pronunciation
 
 	def is_completed(self):
 		return self.completed == 4
@@ -54,7 +55,7 @@ class palabra(object):
 			self.completed += 1
 		else:
 			print("Incorrect:", typed)
-		print("Correct:", self.english)
+		print("Correct:", self.english, "<==>", self.pronunciation)
 		print("----------------------------------")
 
 	def get_next_to_guess(self):
@@ -86,6 +87,8 @@ def main():
 				words = i.split('=')
 				if len(words) == 2:
 					vocabulary.append(palabra(words[1], words[0]))
+				elif len(words) == 3:
+					vocabulary.append(palabra(words[1], words[0], words[2]))
 		except FileNotFoundError:
 			print("No se encuentra el archivo \"words.txt\"")
 
