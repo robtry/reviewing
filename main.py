@@ -35,6 +35,12 @@ def main():
 		copyfile("/home/" + os.getlogin() + "/Dropbox/main/ingles/words/expressions.txt", os.getcwd() + "/expressions.txt")
 		print("Copying collocations.txt")
 		copyfile("/home/" + os.getlogin() + "/Dropbox/main/ingles/words/collocations.txt", os.getcwd() + "/collocations.txt")
+	
+	def clear_enviroment():
+		os.remove("words.txt")
+		os.remove("similar.txt")
+		os.remove("expressions.txt")
+		os.remove("collocations.txt")
 
 	#main
 	clear()
@@ -55,9 +61,9 @@ def main():
 			start_words("collocations.txt")
 		elif(option == "5"):
 			print("You will pass the final exam! no worry =)")
-			exit(0);
 		else:
 			print("Are you stupid?, come on choose something valid")
+	clear_enviroment()
 
 
 if __name__ == "__main__":

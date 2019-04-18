@@ -8,4 +8,4 @@ english word=spanish word/another possible word=some comment
 
 ### expressions.txt
 
-english expresion=key=some comment
+english expresion -key-=some comment
