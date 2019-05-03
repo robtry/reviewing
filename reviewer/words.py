@@ -14,7 +14,11 @@ class palabra(object):
 		self.note = note
 
 	def is_completed(self):
-		return self.completed == 4
+		return self.completed == 2
+
+	def alert(self):
+		if self.completed == 2:
+			print("Completed!!")
 
 	def guess_spanish(self):
 		print(self.english)
@@ -34,7 +38,12 @@ class palabra(object):
 			self.completed += 1
 		else:
 			print("Incorrecto:", typed)
-		print("Correcto:", self.spanish)
+		if self.note != "?":
+			print("Correct:", self.spanish, "<>", self.note)
+		else:
+			print("Correct:", self.spanish)
+		
+		self.alert()
 		print("--------------------------------")
 
 	def guess_english(self):
@@ -53,23 +62,26 @@ class palabra(object):
 			print("Correct:", self.english, "<>", self.note)
 		else:
 			print("Correct:", self.english)
+
+		alert()
 		print("--------------------------------")
 
 	def get_next_to_guess(self):
 		#1 = ingles
 		#2 = español
-		to_return = random.randint(0,1)
-		if to_return == 1:
-			if self.english_c < 2:
-				return 1
-			return 0
-		elif to_return == 0:
-			if self.spanish_c:
-				return 0
-			return 1
+		return 2
+		# to_return = random.randint(0,1)
+		# if to_return == 1:
+		# 	if self.english_c < 2:
+		# 		return 1
+		# 	return 0
+		# elif to_return == 0:
+		# 	if self.spanish_c:
+		# 		return 0
+		# 	return 1
 
 	def __str__(self):
-		return "{} => {} | {}%".format(self.english, self.spanish, self.completed * 25)
+		return "{} => {} | {}%".format(self.english, self.spanish, self.completed * 50)
 
 
 def start_words(file_to_open):

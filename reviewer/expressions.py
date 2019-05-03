@@ -11,7 +11,7 @@ class expresion(object):
 		self.comment = comment
 
 	def is_completed(self):
-		return self.completed == 4
+		return self.completed == 2
 	
 	def ask(self):
 		print(self.english, "|", self.comment)
@@ -27,7 +27,7 @@ class expresion(object):
 		print("--------------------------------")
 
 	def __str__(self):
-		return "{} => {} | {} <> {}%".format(self.english, self.missing, self.comment, self.completed * 25)
+		return "{} => {} | {} <> {}%".format(self.english, self.missing, self.comment, self.completed * 50)
 
 def start_expressions():
 	vocabulary = []
