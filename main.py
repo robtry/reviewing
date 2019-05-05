@@ -22,7 +22,8 @@ def main():
 		print(" 2 - Similar Words | use the file similar.txt > has similars words")
 		print(" 3 - Expressions   | use the file expressions.txt > common expressions")
 		print(" 4 - Collocations  | use the file collocations.txt > famaous collocations")
-		print(" 5 - Go back")
+		print(" 5 - Recent        | use new words lastest_words.txt > has many words")
+		print(" 6 - Go back")
 		print("Choose: ", end="")
 	
 	def set_up_enviroment():
@@ -35,19 +36,22 @@ def main():
 		copyfile("/home/" + os.getlogin() + "/Dropbox/main/ingles/words/expressions.txt", os.getcwd() + "/expressions.txt")
 		print("Copying collocations.txt")
 		copyfile("/home/" + os.getlogin() + "/Dropbox/main/ingles/words/collocations.txt", os.getcwd() + "/collocations.txt")
+		print("Copying lastest_words.txt")
+		copyfile("/home/" + os.getlogin() + "/Dropbox/main/ingles/words/lastest_words.txt", os.getcwd() + "/lastest_words.txt")
 	
 	def clear_enviroment():
 		os.remove("words.txt")
 		os.remove("similar.txt")
 		os.remove("expressions.txt")
 		os.remove("collocations.txt")
+		os.remove("lastest_words.txt")
 
 	#main
 	clear()
 	set_up_enviroment()
 	option = "-1"
 
-	while(option != "5"):
+	while(option != "6"):
 		menu()
 		option = input();
 		clear()
@@ -60,6 +64,8 @@ def main():
 		elif(option == "4"):
 			start_words("collocations.txt")
 		elif(option == "5"):
+			start_words("lastest_words.txt")
+		elif(option == "6"):
 			print("You will pass the final exam! no worry =)")
 		else:
 			print("Are you stupid?, come on choose something valid")

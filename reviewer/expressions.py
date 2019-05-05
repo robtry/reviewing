@@ -24,6 +24,8 @@ class expresion(object):
 		else:
 			print("Incorrect:", typed)
 		print("Correct:", self.english, "=>", self.missing, "|", self.comment)
+		if self.is_completed():
+			print("Completed!")
 		print("--------------------------------")
 
 	def __str__(self):
