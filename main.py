@@ -29,15 +29,15 @@ def main():
 	def set_up_enviroment():
 		print("Copying files... ")
 		print("Copying words.txt")
-		copyfile("/home/" + os.getlogin() + "/Dropbox/main/ingles/words/words.txt", os.getcwd() + "/words.txt")
+		copyfile("/home/" + os.getlogin() + "/Dropbox/main/words/words.txt", os.getcwd() + "/words.txt")
 		print("Copying similar.txt")
-		copyfile("/home/" + os.getlogin() + "/Dropbox/main/ingles/words/similar.txt", os.getcwd() + "/similar.txt")
+		copyfile("/home/" + os.getlogin() + "/Dropbox/main/words/similar.txt", os.getcwd() + "/similar.txt")
 		print("Copying expressions.txt")
-		copyfile("/home/" + os.getlogin() + "/Dropbox/main/ingles/words/expressions.txt", os.getcwd() + "/expressions.txt")
+		copyfile("/home/" + os.getlogin() + "/Dropbox/main/words/expressions.txt", os.getcwd() + "/expressions.txt")
 		print("Copying collocations.txt")
-		copyfile("/home/" + os.getlogin() + "/Dropbox/main/ingles/words/collocations.txt", os.getcwd() + "/collocations.txt")
+		copyfile("/home/" + os.getlogin() + "/Dropbox/main/words/collocations.txt", os.getcwd() + "/collocations.txt")
 		print("Copying lastest_words.txt")
-		copyfile("/home/" + os.getlogin() + "/Dropbox/main/ingles/words/lastest_words.txt", os.getcwd() + "/lastest_words.txt")
+		copyfile("/home/" + os.getlogin() + "/Dropbox/main/words/lastest_words.txt", os.getcwd() + "/lastest_words.txt")
 	
 	def clear_enviroment():
 		os.remove("words.txt")
